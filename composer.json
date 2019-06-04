@@ -1,0 +1,18 @@
+{
+  "name": "ntuangiang/ioc",
+  "description": "This is a design pattern for dependency injection and object locator",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nguyen Tuan Giang",
+      "email": "ntuangiang@outlook.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "IoC\\": "src/"
+    }
+  },
+  "require": {}
+}

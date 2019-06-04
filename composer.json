@@ -1,5 +1,5 @@
 {
-  "name": "ntuangiang/ioc",
+  "name": "ntuangiang/php-ioc",
   "description": "This is a design pattern for dependency injection and object locator",
   "type": "library",
   "license": "MIT",

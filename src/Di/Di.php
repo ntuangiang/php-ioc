@@ -1,7 +1,7 @@
 <?php
 
 
-class DependencyInjection
+class Di
 {
     public static function create() {
 

@@ -2,7 +2,7 @@
 
 namespace IoC\Ol;
 
-class ObjectLocatorInitialContext
+class OlInitialContext
 {
     /**
      * @param string $objectName

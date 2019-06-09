@@ -1,6 +1,8 @@
 {
   "name": "ntuangiang/php-ioc",
   "description": "This is a design pattern for dependency injection and object locator",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "type": "library",
   "license": "MIT",
   "authors": [

@@ -14,10 +14,11 @@
       "IoC\\": "src/"
     }
   },
-  "require": {},
+  "require": {
+    "ntuangiang/php-observer": "dev-master"
+  },
 
   "require-dev": {
-    "phpunit/phpunit": "^8",
-    "ntuangiang/php-observer": "dev-master"
+    "phpunit/phpunit": "^8"
   }
 }

@@ -5,12 +5,12 @@ namespace IoC\Ol;
 class Ol
 {
     /**
-     * @var OlFactory
+     * @var Factory
      */
     private static $factory = null;
 
     /**
-     * @var OlInitialContext
+     * @var InitialContext
      */
     private static $initialContext = null;
 
@@ -21,11 +21,11 @@ class Ol
     public static function getObject(string $objectName) {
 
         if (!Ol::$factory) {
-            Ol::$factory = new OlFactory();
+            Ol::$factory = new Factory();
         }
 
         if (!Ol::$initialContext) {
-            Ol::$initialContext = new OlInitialContext();
+            Ol::$initialContext = new InitialContext();
         }
 
         $object = Ol::$factory->getObject($objectName);

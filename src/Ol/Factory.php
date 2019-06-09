@@ -2,7 +2,7 @@
 
 namespace IoC\Ol;
 
-class OlFactory
+class Factory
 {
     /**
      * @var array

@@ -1,9 +1,12 @@
 {
   "name": "ntuangiang/php-ioc",
-  "description": "This is a design pattern for dependency injection and object locator",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "type": "library",
+  "description": "This is a design pattern for dependency injection and object locator.",
+  "keywords": [
+    "ioc",
+    "dependency",
+    "dependency-injection"
+  ],
   "license": "MIT",
   "authors": [
     {
@@ -11,16 +14,41 @@
       "email": "ntuangiang@outlook.com"
     }
   ],
+  "support": {
+    "issues": "https://github.com/ntuangiang/php-ioc/issues"
+  },
+  "require": {
+    "php": "^7.3",
+    "ntuangiang/php-observer": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "dev-master": {
+      "dont-discover": []
+    }
+  },
   "autoload": {
     "psr-4": {
       "IoC\\": "src/"
+    },
+    "classmap": [
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
     }
   },
-  "require": {
-    "ntuangiang/php-observer": "dev-master"
-  },
-
-  "require-dev": {
-    "phpunit/phpunit": "^8"
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
   }
 }
+

@@ -2,19 +2,31 @@
 
 namespace IoC;
 
-class ClassLoader implements  ClassLoaderInterface
+class ClassLoader implements ClassLoaderInterface
 {
+    /**
+     * @var array|null
+     */
     private $classMap = null;
 
+    /**
+     * @var array|null
+     */
     private $missingClasses = null;
 
+    /**
+     * @var ClassParser|null
+     */
     protected $parser = null;
 
     public function __construct(ClassParserInterface $parser = null)
     {
-        if ($parser) {
+        if ($parser)
+        {
             $this->parser = $parser;
-        } else {
+        }
+        else
+        {
             $this->parser = new ClassParser();
         }
 
@@ -27,9 +39,12 @@ class ClassLoader implements  ClassLoaderInterface
      */
     public function addClassMap(array $classMap): void
     {
-        if ($this->classMap) {
+        if ($this->classMap)
+        {
             $this->classMap = array_merge($this->classMap, $classMap);
-        } else {
+        }
+        else
+        {
             $this->classMap = $classMap;
         }
     }
@@ -43,8 +58,9 @@ class ClassLoader implements  ClassLoaderInterface
 
         $classNames = $this->parser->getAllClassFullNameFromFile($filePath);
 
-        foreach ($classNames as $className) {
-            array_push($classMap, array("{$className}" => $filePath));
+        foreach ($classNames as $className)
+        {
+            $classMap[$className] = $filePath;
         }
 
         self::addClassMap($classMap);
@@ -69,12 +85,13 @@ class ClassLoader implements  ClassLoaderInterface
     /**
      * Loads the given class or interface.
      *
-     * @param  string    $class The name of the class
+     * @param string $class The name of the class
      * @return bool True if loaded, null otherwise
      */
     public function loadClass(string $class): bool
     {
-        if ($file = $this->findFile($class)) {
+        if ($file = $this->findFile($class))
+        {
             include_once "{$file}";
 
             return true;
@@ -89,22 +106,26 @@ class ClassLoader implements  ClassLoaderInterface
     public function findFile(string $class): string
     {
         // class map lookup
-        if (isset($this->classMap[$class])) {
+        if (isset($this->classMap[$class]))
+        {
             return $this->classMap[$class];
         }
 
-        if (isset($this->missingClasses[$class])) {
+        if (isset($this->missingClasses[$class]))
+        {
             return false;
         }
 
         $file = $this->findFileWithExtension($class, '.php');
 
         // Search for Hack files if we are running on HHVM
-        if (false === $file && defined('HHVM_VERSION')) {
+        if (false === $file && defined('HHVM_VERSION'))
+        {
             $file = $this->findFileWithExtension($class, '.hh');
         }
 
-        if (false === $file) {
+        if (false === $file)
+        {
             // Remember that this class does not exist.
             $this->missingClasses[$class] = true;
         }

@@ -2,9 +2,6 @@
 
 namespace IoC;
 
-include_once "RecursiveFilterIterator.php";
-include_once "Directory.php";
-
 use \RecursiveDirectoryIterator;
 
 class Bootstrap

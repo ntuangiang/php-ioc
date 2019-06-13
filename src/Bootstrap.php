@@ -26,6 +26,9 @@ class Bootstrap
                 }
 
                 $realPath = "{$path}/{$absolutePath}{$resource}";
+
+
+
                 include_once "{$realPath}";
             }
         }

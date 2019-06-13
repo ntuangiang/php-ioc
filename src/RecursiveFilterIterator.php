@@ -1,6 +1,5 @@
 <?php
 
-
 namespace IoC;
 
 class RecursiveFilterIterator extends \RecursiveFilterIterator

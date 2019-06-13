@@ -1,6 +1,5 @@
 <?php
 
-
 namespace IoC;
 
 use RecursiveDirectoryIterator;
